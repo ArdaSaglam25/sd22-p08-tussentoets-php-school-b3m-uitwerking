@@ -77,7 +77,7 @@ class StudentController extends AbstractController
     #[Route('/student-delete/{id}', name: 'app_delete_student')]
     public function delete(EntityManagerInterface $entityManager, int $id): Response {
 
-        $student = $entityManager->getRepository(Student::class)->find($id);
+        $student= $entityManager->getRepository(Student::class)->find($id);
         $entityManager->remove($student);
 
         //We voeren de statements uit (het wordt nog gedelete)
